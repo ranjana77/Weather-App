@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>My Weather App</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Weather App</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About this App</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#howtouse" tabindex="-1" aria-disabled="true">How to use</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input id="city" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit" id="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1 class="my-4 text-center">Weather for <span id="cityName"></span></h1>
+        <main>
+            <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+                <div class="col">
+
+                    <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                        <div class="card-header py-3 text-white bg-primary border-primary">
+                            <h4 class="my-0 fw-normal">Temperatures</h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title"><span id="Temp2"></span>&#8451; <small
+                                    class="text-muted fw-light"></small>
+                            </h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li>Temperature is <span id="Temp"></span></li>
+                                <li>Min Temperature is <span id="Min_temp"></span></li>
+                                <li>Max Temperature is <span id="Max_temp"></span></li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm">
+                        <div class="card-header py-3">
+                            <h4 class="my-0 fw-normal">Humidity Info</h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title"><span id="Humidity2"> </span><small
+                                    class="text-muted fw-light"> %</small>
+                            </h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li>Wind degrees is <span id="Wind_degrees"></span></li>
+                                <li>Humidity <span id="Humidity"></span></li>
+                                <li>Feels Like <span id="Feels_like"></span></li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm">
+                        <div class="card-header py-3">
+                            <h4 class="my-0 fw-normal">Sun Info</h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title"><span id="Wind_speed2"> </span><small
+                                    class="text-muted fw-light"> km/hr</small>
+                            </h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li>Wind speed is <span id="Wind_speed"></span></li>
+                                <li>Sunrise at <span id="Sunrise"></span></li>
+                                <li>Sunset at <span id="Sunset"></span></li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="display-6 text-center mb-4">Weather of other common places</h2>
+
+            <div class="table-responsive">
+                <table class="table text-center">
+                    <thead>
+                        <tr>
+                            <th style="width: 34%;"></th>
+                            <th style="width: 34%;">Temp</th>
+                            <th style="width: 34%;">Min_temp</th>
+                            <th style="width: 34%;">Max_temp</th>
+                            <th style="width: 34%;">Cloud_pct</th>
+                            <th style="width: 34%;">Feels_like</th>
+                            <th style="width: 34%;">Humidity</th>
+                            <th style="width: 34%;">Wind_speed</th>
+                            <th style="width: 34%;">Wind_degrees</th>
+                            <th style="width: 34%;">Sunrise</th>
+                            <th style="width: 34%;">Sunset</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row" class="text-start">Mumbai</th>
+                            <td id="TempM"></td>
+                            <td id="Min_tempM"></td>
+                            <td id="Max_tempM"></td>
+                            <td id="Cloud_pctM"></td>
+                            <td id="Feels_likeM"></td>
+                            <td id="HumidityM"></td>
+                            <td id="Wind_speedM"></td>
+                            <td id="Wind_degreesM"></td>
+                            <td id="SunriseM"></td>
+                            <td id="SunsetM"></td>
+
+                        </tr>
+                        <tr>
+                            <th scope="row" class="text-start">Pune</th>
+                            <td id="TempP"></td>
+                            <td id="Min_tempP"></td>
+                            <td id="Max_tempP"></td>
+                            <td id="Cloud_pctP"></td>
+                            <td id="Feels_likeP"></td>
+                            <td id="HumidityP"></td>
+                            <td id="Wind_speedP"></td>
+                            <td id="Wind_degreesP"></td>
+                            <td id="SunriseP"></td>
+                            <td id="SunsetP"></td>
+                        </tr>
+
+                        <tr>
+                            <th scope="row" class="text-start">Bangalore</th>
+                            <td id="TempB"></td>
+                            <td id="Min_tempB"></td>
+                            <td id="Max_tempB"></td>
+                            <td id="Cloud_pctB"></td>
+                            <td id="Feels_likeB"></td>
+                            <td id="HumidityB"></td>
+                            <td id="Wind_speedB"></td>
+                            <td id="Wind_degreesB"></td>
+                            <td id="SunriseB"></td>
+                            <td id="SunsetB"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="text-start">Hyderabad</th>
+                            <td id="TempH"></td>
+                            <td id="Min_tempH"></td>
+                            <td id="Max_tempH"></td>
+                            <td id="Cloud_pctH"></td>
+                            <td id="Feels_likeH"></td>
+                            <td id="HumidityH"></td>
+                            <td id="Wind_speedH"></td>
+                            <td id="Wind_degreesH"></td>
+                            <td id="SunriseH"></td>
+                            <td id="SunsetH"></td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="about-section my-5">
+        <div class="container">
+            <h2 class="text-center my-4">About Our Weather App</h2>
+            <p class="lead text-center">
+
+                Get a real-time snapshot of the current weather conditions in Bhopal, Madhya Pradesh, India, right here
+                on our website. Whether you're planning an outdoor activity or just curious about what to wear today,
+                our comprehensive weather report has you covered.
+
+                But that's not all! We also provide weather updates for four major Indian metropolises: Mumbai,
+                Pune,Bangalore, and Hyderabad. So, you can easily compare Bhopal's weather to other parts of the country
+                and make informed decisions about your travel plans or daily activities.
+
+                Our user-friendly interface makes it easy to find the information you need quickly and easily. Simply
+                select the city you're interested in, and voila! You'll see the current temperature, humidity, wind
+                speed, and forecast for the next few days.
+
+                In addition to the basic weather data, we also provide helpful extras like sunrise and sunset times,
+                Cloud Percentage, and Humidity reports. So, you can stay safe and informed about the weather conditions
+                in Bhopal and beyond.
+
+            </p>
+        </div>
+    </section>
+    <section id="howtouse" class="about-section my-5">
+        <div class="container">
+            <h2 class="text-center my-4">How to use?</h2>
+            <p class="lead text-center">
+
+                It's so intuitive, even a parrot could use it... but hopefully you're smarter than that!
+            </p>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
